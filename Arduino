@@ -1,0 +1,39 @@
+/*
+ * Program Sensor Sentuh Sederhana
+ * Dibuat untuk anak-anak oleh Gemini
+ */
+
+// Menentukan pin yang kita gunakan
+const int SENSOR_PIN = 2; // Pin untuk kabel sentuh
+const int LED_PIN = 8;    // Pin untuk LED
+
+// Variabel untuk menyimpan status sentuhan
+int sensorState = 0;
+
+void setup() {
+  // Mengatur pin LED sebagai OUTPUT (keluaran)
+  pinMode(LED_PIN, OUTPUT);
+  
+  // Mengatur pin sensor sebagai INPUT (masukan)
+  pinMode(SENSOR_PIN, INPUT);
+  
+  // Memulai Serial Monitor (opsional, untuk melihat nilai sensor)
+  Serial.begin(9600); 
+}
+
+void loop() {
+  // Membaca status dari pin sensor (disentuh atau tidak)
+  sensorState = digitalRead(SENSOR_PIN);
+
+  // Menampilkan nilai sensor ke Serial Monitor
+  Serial.println(sensorState);
+
+  // Logika: Jika sensor disentuh (nilainya HIGH atau 1)
+  if (sensorState == HIGH) {
+    digitalWrite(LED_PIN, HIGH); // Nyalakan LED
+  } 
+  // Jika tidak disentuh (nilainya LOW atau 0)
+  else {
+    digitalWrite(LED_PIN, LOW);  // Matikan LED
+  }
+}
