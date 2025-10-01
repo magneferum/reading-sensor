@@ -1,11 +1,10 @@
 /*
  * Program Sensor Sentuh Sederhana
- * Dibuat untuk anak-anak oleh Gemini
  */
 
 // Menentukan pin yang kita gunakan
 const int SENSOR_PIN = 2; // Pin untuk kabel sentuh
-const int LED_PIN = 8;    // Pin untuk LED
+const int LED_PIN = 3;    // Pin untuk LED
 
 // Variabel untuk menyimpan status sentuhan
 int sensorState = 0;
